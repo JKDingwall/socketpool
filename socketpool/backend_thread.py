@@ -9,13 +9,15 @@ import threading
 import time
 import weakref
 
+from socketpool.kasocket import kasocket
+
 try:
     import Queue as queue
 except ImportError: # py3
     import queue
 
 Select = select.select
-Socket = socket.socket
+Socket = kasocket
 sleep = time.sleep
 Semaphore = threading.BoundedSemaphore
 

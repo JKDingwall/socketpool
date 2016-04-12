@@ -8,10 +8,11 @@ from eventlet.green import select
 from eventlet.green import socket
 from eventlet import queue
 
+from socketpool.kasocket import kasocket
 from socketpool.pool import ConnectionPool
 
 sleep = eventlet.sleep
-Socket = socket.socket
+Socket = kasocket
 Select = select.select
 Semaphore = eventlet.semaphore.BoundedSemaphore
 

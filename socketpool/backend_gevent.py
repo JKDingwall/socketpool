@@ -8,6 +8,8 @@ from gevent import select
 from gevent import socket
 from gevent import queue
 
+from socketpool.kasocket import kasocket
+
 try:
     from gevent import lock
 except ImportError:
@@ -17,7 +19,7 @@ except ImportError:
 
 sleep = gevent.sleep
 Semaphore = lock.BoundedSemaphore
-Socket = socket.socket
+Socket = kasocket
 Select = select.select
 
 class PriorityQueue(queue.PriorityQueue):
